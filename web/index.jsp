@@ -975,25 +975,12 @@
                     return function () {
 
                         var html = '<h4>' + locations[i][0] + '</h4>';
-                        html += '<div class="container" height=1000px width=1000px>  <div id="myCarousel" class="carousel slide" data-ride="carousel">' +
-                                ' <!-- Indicators --> <ol class="carousel-indicators"> <li data-target="#myCarousel" data-slide-to="0" class="active"></li> <li data-target="#myCarousel" data-slide-to="1"></li> <li data-target="#myCarousel" data-slide-to="2"></li> </ol> ' +
-                                '<!-- Wrapper for slides -->' +
-                                ' <div class="carousel-inner"> <div class="item active"> <img src=' + response.images[0].fileUrl + ' alt="Los Angeles" style="width:40%;">' +
-                                ' </div> <div class="item"> <img src=' + response.images[1].fileUrl + 'style="width:40%;"> </div> <div class="item"> <img src=' + response.images[2].fileUrl + 'style="width:40%;"> </div> </div>' +
-                                ' <!-- Left and right controls --> <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> <span class="sr-only">Previous</span> </a> ' +
-                                '<a class="right carousel-control" href="#myCarousel" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> <span class="sr-only">Next</span> </a> </div> </div>';
-                        /*  html += '<div class="slideshow-container">';
-                         for (j = 0; j < response.images.length; j++) {
+                        html+= '<div> <image href=https://www.expedia.com/lp/destinations/' + locations[i][3] +'width=400px height=400px src='+ response.images[0].fileUrl + ' ></image></div>';
 
-                         html += '<div class="mySlides fade">';
-                         html += '<img src="' + response.images[j].fileUrl + '" />';
-                         html += '</div>';
-                         }*/
-
-                        html += '<div>';
-                        html += '<div align="center" ><a   target="_blank" href= https://www.expedia.com/lp/destinations/' + locations[i][3] + ' "><strong>Learn More</strong></a></div>';
-                        html += '<div align="center"> <a  target="_blank" href= https://www.expedia.com/lp/destinations/' + locations[i][3] + ' "><strong>See Prices</strong></a></div>';
-                        html += '</div>';
+                        html += '<table width="100%"> <tr>';
+                        html += ' <td width="50%"><a   target="_blank" href= https://www.expedia.com/lp/destinations/' + locations[i][3] + ' "><strong>Learn More</strong></a></td>';
+                        html += '<td width="50%" align="right"> <a  target="_blank" href= https://www.expedia.com/lp/destinations/' + locations[i][3] + ' "><strong>See Prices</strong></a></td>';
+                        html += '</tr></table>';
 
                         infowindow.setContent(html);
                         infowindow.open(map, marker);
