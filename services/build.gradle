@@ -1,0 +1,53 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'media-rest-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+springBoot {
+    mainClass = "com.expedia.hackathon.controller.RestController"
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+//bootRepackage.enabled = false
+
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4-alpha1'
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2.1'
+}
